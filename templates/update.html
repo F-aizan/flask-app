@@ -1,0 +1,36 @@
+
+{% extends  'base.html' %}
+
+{% block head %}
+<title>Task Master </title>
+<style>
+    *{
+    margin:0;
+    }
+    body{
+    background-color:grey;
+    }
+    .content{
+    margin-left:500px;
+    }
+    #submit{
+        width:100px;
+        height:40px;
+        border-radius:20px;
+        background-color:#3366ff;
+        color:white;
+    }
+</style>
+{% endblock %}
+
+{% block body %}
+<div class='content'>
+    <h1>Update Task</h1><br>
+    <div id="form">
+    <form action="/" method="POST">
+        <input type="text" name="content" id="content">
+        <input type="submit" value="Add Task" id="submit">
+    </form>
+    </div>
+</div>
+{% endblock %}
