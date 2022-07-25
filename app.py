@@ -42,10 +42,10 @@ def delete(id):
 
 @app.route('/update/<int:id>',methods=['GET','POST'])
 def update(id):
-    task = todo.query.get_or_404(id)
+    task_to_update = todo.query.get_or_404(id)
 
     if request.method == 'POST':
-        task.name = request.form['content']
+        task_to_update.name = request.form['content']
         try:
             db.session.commit()
             return redirect('/')
@@ -53,6 +53,6 @@ def update(id):
         except:
             return "There was a problem in updating"
     else:
-        return render_template('update.html', task=task)
+        return render_template('update.html', task=task_to_update)
 if __name__=='__main__':
     app.run(debug=True)

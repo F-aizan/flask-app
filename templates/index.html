@@ -39,6 +39,7 @@
 
 {% block body %}
 <div class='content'>
+    <pre id="text"></pre>
     <h1>Todo App</h1><br>
     <table border="1">
         <tr>
@@ -62,18 +63,26 @@
     </table>
 </div><br>
 <form action="/" name="myform" id="myform" method="POST" onsubmit="return validate()">
-    <input type="text" name="content" id="content" >
+    <input type="text" name="content" id="content">
     <input type="submit" value="Add Task" id="submit" >
 </form>
 </div>
-<script type="text/javascript">
-    function validate(){
+<script>
     var x= document.forms['myform']['content'].value;
+    if(x == ""){
+        document.getElementById('submit').addEventListener('click',function(e){e.preventDefault()})
+    }
+    function validate(){
     if(x=="")
     {
+    
     window.alert("Please Enter a valid task");
     return False;
+    } 
     }
-}
+    //function to check the null safety of input
+    
+
+
 </script>
 {% endblock %}
