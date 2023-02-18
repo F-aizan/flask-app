@@ -7,7 +7,7 @@
     }
     body
     {
-    background-color:grey;
+        background-color:lightblue;
     }
     .content{
     margin-left:500px;
@@ -28,7 +28,9 @@
     border-collapse:collapse;
     }
     #content{
-        border-color:#3366ff;
+        border-radius: 10px;
+        height: 30px;
+        border-color:#5672c7;
     }
     .content table a{
         text-decoration:none;
@@ -62,27 +64,10 @@
         {% endfor %}
     </table>
 </div><br>
-<form action="/" name="myform" id="myform" method="POST" onsubmit="return validate()">
-    <input type="text" name="content" id="content">
+<form action="/" name="myform" id="myform" method="POST">
+    <input type="text" name="content" id="content" required>
     <input type="submit" value="Add Task" id="submit" >
 </form>
 </div>
-<script>
-    var x= document.forms['myform']['content'].value;
-    if(x == ""){
-        document.getElementById('submit').addEventListener('click',function(e){e.preventDefault()})
-    }
-    function validate(){
-    if(x=="")
-    {
-    
-    window.alert("Please Enter a valid task");
-    return False;
-    } 
-    }
-    //function to check the null safety of input
-    
 
-
-</script>
 {% endblock %}

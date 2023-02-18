@@ -8,7 +8,7 @@
     margin:0;
     }
     body{
-    background-color:grey;
+    background-color:lightblue;
     }
     .content{
     margin-left:500px;
@@ -17,8 +17,13 @@
         width:100px;
         height:40px;
         border-radius:20px;
-        background-color:#3366ff;
+        background-color:#5672c7;
         color:white;
+    }
+    #content{
+        border-radius: 10px;
+        height: 30px;
+        border-color:#3366ff;
     }
 </style>
 {% endblock %}
@@ -28,7 +33,7 @@
     <h1>Update Task</h1><br>
     <div id="form">
     <form action="/update/{{task.id}}" method="POST">
-        <input type="text" name="content" id="content" value="{{task.name}}">
+        <input type="text" name="content" id="content" value="{{task.name}}" required>
         <input type="submit" value="Update Task" id="submit">
     </form>
     </div>
